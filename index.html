@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/style.css">
+  <title>Weather Dashboard</title>
+</head>
+
+
+<body class="container-fluid p-0 m-0">
+  <header class="bg-primary">
+    <h1 class="pt-3 pb-3 m-0 text-center">Weather Dashboard</h1>
+  </header>
+
+  <main class="container-fluid p-0 m-0">
+    <div class="row pb-2">
+      <aside class="col-3 text-center">
+
+        <!-- form inputs -->
+        <form class="col mt-5" id="search-area">
+          <!-- search bar  -->
+          <label for="site-search">Search for a City:</label>
+          <input type="text" id="userInput">
+          <input type="submit" id="search-button" class="m-3"></input>
+          <br><br>
+          <!-- list of searched cities -->
+          <div id="searched-cities" class="mt-5">
+            <button>Placeholder</button>
+          </div>
+        </form>
+      </aside>
+
+      <div class="col-9">
+        <h1>Today</h1>
+        <section id="today">
+          <div class="col-11 p-3 today-card">
+            <h3 class="city-name">City</h3>
+            <h3 class="td-temp">Temp</h3>
+            <h3 class="td-humidity">Humidity</h3>
+            <h3 id="td-wind">Wind</h3>
+
+          </div>
+        </section>
+        <section id="forecast"></section>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="./assets/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+.today-card {
+  background-color: white;
+  
+}
+
+form {
+  font-size: 115%;
+}
+
+aside {
+  background-color:aquamarine;
+  height: 80vh;
+}
+
+.today-card {
+  border: 1px black solid;
+}
+
+h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
