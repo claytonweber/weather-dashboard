@@ -2,7 +2,7 @@ var apiKey = 'b3de0c1d89e9ffc61ed2d5da69a35c8f';
 var urlRoot = 'https://api.openweathermap.org';
 
 var searchButton = document.querySelector('#search-button');
-var today = document.querySelector('#today');
+var today = document.querySelector('#city-name');
 var forecast = document.querySelector('#forecast');
 var searchHistory = document.querySelector('#searched-cities');
 var search = document.querySelector('#userInput');
@@ -20,10 +20,11 @@ function getWeather(search) {
       .then(function (response) {
         recentSearches.push(search);
         localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
-        renderWeather(response);
+       
         return response.json();
       })
       .then(function (data) {
+        // renderWeather(data);
         var lat = data[0].lat;
         var lon = data[0].lon;
         //plugs in latitude and longitude
@@ -44,9 +45,10 @@ function getMoreWeather(url) {
 
 function renderWeather(url) {
     var weatherInfo = url;
-    console.log(weatherInfo.wind)
-    today.innerHTML = `${weatherInfo.main.temp}`
-    todayWind.innerHTML = `${weatherInfo.main}`;
+    // debugger;
+    console.log(weatherInfo);
+    today.innerHTML = `${weatherInfo.name}`
+    todayWind.innerHTML = `${weatherInfo.wind.speed}`;
     
     // return weatherInfo.main;
   // today.innerHTML = search;
