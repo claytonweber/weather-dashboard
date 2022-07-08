@@ -10,6 +10,7 @@ var search = document.querySelector('#userInput');
 var recentSearches = [];
 let coordUrl = '';
 
+var searchData = '';
 
 
 function fetchWeatherData(search) {
@@ -67,7 +68,7 @@ function renderWeather(url) {
     var uvi = todayInfo.current.uvi;
     // debugger;
     // console.log(weatherInfo);
-    today.innerHTML = `${todayInfo.name}`
+    today.innerHTML = searchData;
     todayTemp.innerHTML = `Current temp: ${todayInfo.current.temp}`
     todayHumidity.innerHTML = `Humidity: ${todayInfo.current.humidity}`
     todayWind.innerHTML = `Wind strength: ${todayInfo.current.wind_speed}`;
@@ -76,9 +77,9 @@ function renderWeather(url) {
     if(uvi < 3) {
       todayUvi.setAttribute('class', 'bg-success');
     } else if (uvi < 7) {
-      todayUvi.setClass('class', 'bg-warning')
+      todayUvi.setAttribute('class', 'bg-warning')
     } else {
-      todayUvi.setClass('class', 'bg-danger');
+      todayUvi.setAttribute('class', 'bg-danger');
     }
     
     // return weatherInfo.main;
@@ -86,19 +87,19 @@ function renderWeather(url) {
   // today.append(dailyForecast);
 }
 var weatherInfo;
+
 function renderForecast(url) {
+  forecast.innerHTML='';
+  
   var weatherInfo = url;
   console.log(weatherInfo);
   // debugger;
-  for (i=0; i < 5; i++) {
+  for(var i=0; i < 5; i++) {
     var weatherCard = document.createElement('div');
-
     var currentTemp = document.createElement('div');
     var typeOfWeather = document.createElement('div');
     var windSpeed = document.createElement('div');
     var humidity = document.createElement('div');
-    var uvIndex = 
-
 
     weatherCard.setAttribute('class', 'weather-card');
     
@@ -114,7 +115,8 @@ function renderForecast(url) {
 searchButton.addEventListener("click", function(e) {
   //prevents the screen from refreshing every time
   e.preventDefault();
-  var searchData = search.value;
+  
+  searchData = search.value;
   fetchWeatherData(searchData);
   renderHistory(searchData);
   // console.log(searchData);
