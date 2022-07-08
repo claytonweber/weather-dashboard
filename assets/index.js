@@ -127,17 +127,21 @@ var storedSearches = [];
 
 function renderHistory(e) {
   storedSearches = localStorage.getItem("recentSearches") ? localStorage.getItem("recentSearches").split(";") : []
-  
-   // console.log(storedSearches)
-    for (let i=0; i <= storedSearches.length; i++) {
-      // console.log(i);
-      cityButton = document.createElement("button");
+  cityButton = document.createElement("button");
       cityButton.classList.add("search-button");
       cityButton.textContent = e;
-      // console.log(city);
+
+      searchHistory.appendChild(cityButton);
+   // console.log(storedSearches)
+    // for (let i=0; i <= storedSearches.length; i++) {
+    //   // console.log(i);
+    //   cityButton = document.createElement("button");
+    //   cityButton.classList.add("search-button");
+    //   cityButton.textContent = e;
+    //   // console.log(city);
     
     searchHistory.appendChild(cityButton);
     
-  }
+  // }
 }
 
