@@ -1,6 +1,7 @@
+
 .today-card {
   background-color: white;
-  
+  height: 30vh;
 }
 
 form {
@@ -19,4 +20,29 @@ aside {
 h3 {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.search-button {
+  width: 85%;
+  height: 50px;
+  margin: 5px;
+}
+/* .card { display: inline } */
+
+/* .weather-card { 
+  background-color: yellow;
+  display: inline;
+  padding: 5px;
+  margin: 10px;
+} */
+
+#forecast {
+  /* display: inline; */
+  display: flex;
+  margin-top: 10px;
+}
+#forecast div {
+  background-color: white; 
+  margin: 10px;
+  width: 20%;
 }
